@@ -42,3 +42,29 @@ h1, h2, h3, h4, h5, h6 {
 .glow-text {
   text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
+
+.glow-violet {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
+}
+
+.glow-violet-lg {
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.4), 0 0 120px rgba(139, 92, 246, 0.15);
+}
+
+/* Gradient border helper via outline pseudo */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(139,92,246,0.5), rgba(217,70,239,0.15), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
