@@ -12,6 +12,12 @@
   --color-brand-gray: #8F9CAE;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* Evita que las secciones queden tapadas por la navbar fija */
+  scroll-padding-top: 96px;
+}
+
 body {
   background-color: var(--color-brand-dark);
   color: #ffffff;
@@ -41,6 +47,32 @@ h1, h2, h3, h4, h5, h6 {
 /* Utilities */
 .glow-text {
   text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+/* ── Marquee (ticker infinito) ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ── Floating badges del Hero ── */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-12px) rotate(0.5deg); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-9px) rotate(-0.5deg); }
+}
+@keyframes float3 {
+  0%, 100% { transform: translateY(-50%) translateX(0px); }
+  50%       { transform: translateY(calc(-50% - 10px)) translateX(2px); }
 }
 
 .glow-violet {

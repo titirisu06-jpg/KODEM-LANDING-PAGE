@@ -1,8 +1,11 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Estadisticas } from './components/Estadisticas';
+import { Marquee } from './components/Marquee';
 import { Nosotros } from './components/Nosotros';
 import { Servicios } from './components/Servicios';
 import { Beneficios } from './components/Beneficios';
+import { Testimonios } from './components/Testimonios';
 import { Proceso } from './components/Proceso';
 import { Preguntas } from './components/Preguntas';
 import { Contacto } from './components/Contacto';
@@ -28,9 +31,12 @@ export default function App() {
         <Hero />
 
         <main className="overflow-hidden">
+          <Estadisticas />
+          <Marquee />
           <Nosotros />
           <Servicios />
           <Beneficios />
+          <Testimonios />
           <Proceso />
           <Preguntas />
           <Contacto />

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Zap, Star, Clock } from 'lucide-react';
 
 const tags = ['Páginas web', 'Automatizaciones', 'Chatbots', 'Sistemas a medida'];
 
@@ -27,6 +27,57 @@ export function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[900px] h-[600px] bg-brand-violet/18 blur-[130px] rounded-full pointer-events-none" />
       {/* Orb fuchsia secundario */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] w-[400px] h-[250px] bg-fuchsia-500/10 blur-[80px] rounded-full pointer-events-none" />
+
+      {/* ── Badges flotantes — solo visibles en pantallas grandes ── */}
+
+      {/* Badge superior derecho: disponibilidad */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, duration: 0.6 }}
+        className="hidden xl:flex absolute top-36 right-16 items-center gap-2.5 px-4 py-2.5 bg-brand-card/90 backdrop-blur-md border border-white/[0.1] rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+        style={{ animation: 'float1 5s ease-in-out infinite' }}
+      >
+        <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
+        <div>
+          <p className="text-white text-xs font-semibold leading-tight">Disponibles ahora</p>
+          <p className="text-brand-gray/60 text-[10px]">Respondemos en &lt;24hs</p>
+        </div>
+      </motion.div>
+
+      {/* Badge inferior izquierdo: entrega */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="hidden xl:flex absolute bottom-32 left-16 items-center gap-2.5 px-4 py-2.5 bg-brand-card/90 backdrop-blur-md border border-brand-violet/25 rounded-2xl shadow-[0_8px_30px_rgba(139,92,246,0.2)]"
+        style={{ animation: 'float2 6s ease-in-out infinite' }}
+      >
+        <div className="w-8 h-8 rounded-xl bg-brand-violet/20 border border-brand-violet/35 flex items-center justify-center">
+          <Clock size={14} className="text-brand-violet" />
+        </div>
+        <div>
+          <p className="text-white text-xs font-semibold leading-tight">Entrega express</p>
+          <p className="text-brand-gray/60 text-[10px]">Primeros resultados en 48hs</p>
+        </div>
+      </motion.div>
+
+      {/* Badge central derecho: rating */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        className="hidden xl:flex absolute top-1/2 -translate-y-1/2 right-10 flex-col items-center gap-1.5 px-4 py-3 bg-brand-card/90 backdrop-blur-md border border-white/[0.08] rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+        style={{ animation: 'float3 7s ease-in-out infinite' }}
+      >
+        <div className="flex gap-0.5">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} size={11} className="text-brand-violet fill-brand-violet" />
+          ))}
+        </div>
+        <p className="text-white text-xs font-bold">99% satisfacción</p>
+        <p className="text-brand-gray/50 text-[10px]">en todos los proyectos</p>
+      </motion.div>
 
       {/* ── Content ── */}
       <div className="max-w-5xl mx-auto text-center relative z-10">
